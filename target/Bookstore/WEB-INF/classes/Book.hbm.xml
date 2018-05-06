@@ -7,7 +7,7 @@
 
     <class name="Book" table="books">
         <id name="id" column="bookid">
-            <generator class="native"/>
+            <generator class="increment"/>
         </id>
         <property name="bookname" column="bookname"/>
         <property name="author" column="author"/>

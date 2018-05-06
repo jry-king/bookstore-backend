@@ -18,7 +18,7 @@ import net.sf.json.JSONObject;
 /**
  * Servlet implementation class UserManagerServlet
  */
-@WebServlet("/BooklistServlet")
+@WebServlet("/Booklist")
 public class BooklistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -51,14 +51,12 @@ public class BooklistServlet extends HttpServlet {
                    .getCurrentSession().createQuery("from Book").list();
             Iterator<Book> it = result.iterator();
             JSONArray booksJson = new JSONArray();
-            JSONObject res = null;
             while (it.hasNext()) {
-                Book book = (Book) it.next();
+                Book book = it.next();
                 JSONObject bookjson = JSONObject.fromObject(book);
                 booksJson.add(bookjson);
-                res = JSONObject.fromObject(book);
             }
-            out.print(res);
+            out.print(booksJson);
             out.flush();
             out.close();
             HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
