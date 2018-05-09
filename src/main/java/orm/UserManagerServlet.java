@@ -2,7 +2,6 @@ package orm;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -76,8 +75,11 @@ public class UserManagerServlet extends HttpServlet{
             User user = new User();
             user.setUsername(request.getParameter("username"));
             user.setPassword(request.getParameter("password"));
+            user.setRole("customer");
             user.setEmail(request.getParameter("email"));
             user.setPhone(request.getParameter("phone"));
+            System.out.print(user.getUsername());
+            System.out.print(user.getEmail());
             HibernateUtil.getSessionFactory().getCurrentSession().save(user);
 
             out.print("success");

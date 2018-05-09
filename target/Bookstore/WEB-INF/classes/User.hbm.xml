@@ -12,6 +12,8 @@
         <property name="username" column="username"/>
         <property name="password" column="userpassword"/>
         <property name="role" column="role"/>
+        <property name="email" column="email"/>
+        <property name="phone" column="phone"/>
     </class>
 
 </hibernate-mapping>
