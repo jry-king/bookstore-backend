@@ -78,8 +78,6 @@ public class UserManagerServlet extends HttpServlet{
             user.setRole("customer");
             user.setEmail(request.getParameter("email"));
             user.setPhone(request.getParameter("phone"));
-            System.out.print(user.getUsername());
-            System.out.print(user.getEmail());
             HibernateUtil.getSessionFactory().getCurrentSession().save(user);
 
             out.print("success");

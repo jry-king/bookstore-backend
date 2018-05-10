@@ -1,19 +1,18 @@
 package orm;
 
 public class Cart {
-    private Long userid;
+    private Long id;
 
     private String book;
     private double price;
     private int number;
+    private int user;
 
     public Cart(){}
 
-    public Long getUserId() { return userid; }
+    public Long getId() { return id; }
 
-    public void setUserId(Long userid) {
-        this.userid = userid;
-    }
+    public void setId(Long id) { this.id = id; }
 
     public String getBook() {
         return book;
@@ -37,5 +36,13 @@ public class Cart {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public int getUser() {
+        return user;
+    }
+
+    public void setUser(int user) {
+        this.user = user;
     }
 }

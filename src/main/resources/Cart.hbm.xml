@@ -6,12 +6,13 @@
 <hibernate-mapping package="orm">
 
     <class name="Cart" table="carts">
-        <id name="userid" column="userid">
+        <id name="id" column="id">
             <generator class="native"/>
         </id>
         <property name="book" column="book"/>
         <property name="price" column="price"/>
         <property name="number" column="number"/>
+        <property name="user" column="user"/>
     </class>
 
 </hibernate-mapping>
